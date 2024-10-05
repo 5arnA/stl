@@ -1,16 +1,20 @@
 #include <iostream>
 #include <string>
+#include <vector>
+
 #include "vowel.hpp"
 
 template <typename T>
 void printVector(const std::vector<T>& collection) {
+#pragma unroll 4
     for (const auto& element : collection) {
         std::cout << element << '\n';
     }
     std::cout << '\n';
 }
 
-int main() {
+int main() 
+{
     std::vector<std::string> words = {
         "Somebody once told me the world is gonna roll me",
         "I ain't the sharpest tool in the shed",
